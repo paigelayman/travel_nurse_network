@@ -41,9 +41,20 @@ const updateExperience = async (req, res) => {
   }
 }
 
+const deleteExperience = async (req, res) => {
+  try {
+    let experienceId = parseInt(req.params.experience_id)
+    await Experience.destroy({ where: { id: experienceId } })
+    res.send(`The experience with ID ${experienceId} has been deleted.`)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getExperiences,
   getOneExperience,
   addExperience,
-  updateExperience
+  updateExperience,
+  deleteExperience
 }
