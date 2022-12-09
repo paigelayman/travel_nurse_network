@@ -11,7 +11,7 @@ const getExperiences = async (req, res) => {
 
 const getOneExperience = async (req, res) => {
   try {
-    const experience = await Experience.findByPk(req.params.city_id)
+    const experience = await Experience.findByPk(req.params.experience_id)
     res.send(experience)
   } catch (error) {
     throw error
