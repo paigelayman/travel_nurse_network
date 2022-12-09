@@ -27,9 +27,7 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
-      name: DataTypes.STRING,
-      unit: DataTypes.STRING,
-      patientLoad: DataTypes.INTEGER
+      name: DataTypes.STRING
     },
     {
       sequelize,
