@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'cityId'
       }),
         Hospital.hasMany(models.Review, {
-          as: 'hospital',
+          as: 'facility',
           foreignKey: 'hospitalId'
         })
     }

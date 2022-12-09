@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       City.hasMany(models.Hospital, {
-        as: 'city',
+        as: 'location',
         foreignKey: 'cityId'
       }),
         City.hasMany(models.Experience, {
-          as: 'city',
+          as: 'town',
           foreignKey: 'cityId'
         })
     }
