@@ -18,10 +18,10 @@ const getOneCity = async (req, res) => {
   }
 }
 
-getCityReviews = async (req, res) => {
-  const { id } = req.params
-  const city = await City.findAll({ include: [{ model: Reviews }] })
-  res.send(city)
+const getCityHospitals = async (req, res) => {
+  let cityId = parseInt(req.params.city_id)
+  const hospital = await City.findAll({ where: { cityId: cityId } })
+  res.send(hospital)
 }
 
 const addCity = async (req, res) => {
@@ -38,5 +38,5 @@ module.exports = {
   getCities,
   getOneCity,
   addCity,
-  getCityReviews
+  getCityHospitals
 }
