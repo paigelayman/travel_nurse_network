@@ -26,7 +26,7 @@ return (
     {cities ? cities.map((city) => (
       <div className='cities'>
         <h4>{city.name}, {city.state}</h4>
-        <button> <Link className = 'link' to="/reviews">Reviews</Link></button>
+        <button> <Link className = 'link' to="/hospitals">Facilities</Link></button>
         <button> <Link className = 'link' to="/experiences">Experiences</Link></button>
       </div>
     )): ''}  

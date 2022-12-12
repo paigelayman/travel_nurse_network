@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom' 
 
 
 
@@ -24,6 +25,7 @@ return (
     <h3>Price: ${experience.price}</h3>  
   </div>
   )): "" }
+   <button className='link-button'> <Link className='link' to='/'>Back to Home</Link></button>
   </div>
 )
 }
