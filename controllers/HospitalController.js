@@ -1,4 +1,5 @@
 const { Hospital } = require('../models')
+const { City } = require('../models')
 
 const getHospitals = async (req, res) => {
   try {
@@ -18,15 +19,25 @@ const getHospitals = async (req, res) => {
 //   }
 // }
 
-const getHospitalReviews = async (req, res) => {
+const getCityHospitals = async (req, res) => {
   try {
     let cityId = parseInt(req.params.city_id)
-    const review = await City.findAll({ where: { cityId: cityId } })
-    res.send(review)
+    const hospital = await Hospital.findAll({ where: { cityId: cityId } })
+    res.send(hospital)
   } catch (error) {
     throw error
   }
 }
+
+// const getHospitalReviews = async (req, res) => {
+//   try {
+//     let cityId = parseInt(req.params.city_id)
+//     const review = await City.findAll({ where: { cityId: cityId } })
+//     res.send(review)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 const addHospital = async (req, res) => {
   try {
@@ -42,5 +53,6 @@ module.exports = {
   getHospitals,
   // getOneHospital,
   addHospital,
-  getHospitalReviews
+  // getHospitalReviews,
+  getCityHospitals
 }

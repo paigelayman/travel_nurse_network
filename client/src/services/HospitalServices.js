@@ -1,8 +1,8 @@
 import Client from './api'
 
-export const GetHospitals = async (id) => {
+export const GetHospitals = async ({ city }) => {
   try {
-    const res = await Client.get(`/hospital/${city.id}`)
+    const res = await Client.get(`/hospitals/${city.id}`)
   } catch (error) {
     throw error
   }

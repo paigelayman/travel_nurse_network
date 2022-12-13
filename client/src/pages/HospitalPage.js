@@ -9,16 +9,16 @@ const HospitalPage = () => {
 
   useEffect(() => {
     const handleHospitals = async () => {
-      const data = await GetHospitals(city.id)
-      setHospitals(data)
+      const data = await GetHospitals(`${id}`)
+      setHospitals(data.data)
     }
-    handleHospitals
+    handleHospitals()
   }, [])
 
   return (
     <div className="hospitals">
-      {hospitals.map((hospital) => (
-        <Hospital key={hospital.id} name={hospital.name} />
+      {hospitals?.map((hospital) => (
+        <Hospital name={hospital.name} />
       ))}
     </div>
   )

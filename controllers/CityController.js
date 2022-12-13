@@ -18,15 +18,15 @@ const getOneCity = async (req, res) => {
   }
 }
 
-const getCityHospitals = async (req, res) => {
-  try {
-    let cityId = parseInt(req.params.city_id)
-    const hospital = await City.findAll({ where: { cityId: cityId } })
-    res.send(hospital)
-  } catch (error) {
-    throw error
-  }
-}
+// const getCityHospitals = async (req, res) => {
+//   try {
+//     let cityId = parseInt(req.params.city_id)
+//     const hospital = await City.findAll({ where: { cityId: cityId } })
+//     res.send(hospital)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 const addCity = async (req, res) => {
   try {
@@ -41,6 +41,6 @@ const addCity = async (req, res) => {
 module.exports = {
   getCities,
   getOneCity,
-  addCity,
-  getCityHospitals
+  addCity
+  //   getCityHospitals
 }
