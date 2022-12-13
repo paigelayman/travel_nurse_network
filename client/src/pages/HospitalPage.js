@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { GetHospitals } from '../services/HospitalServices'
 import { useParams } from 'react-router-dom'
-import Hospital from '../src/components/Hospital'
+import Hospital from '../components/Hospital'
 
 const HospitalPage = () => {
   let { id } = useParams()
