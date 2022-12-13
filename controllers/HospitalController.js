@@ -19,13 +19,13 @@ const getHospitals = async (req, res) => {
 // }
 
 const getHospitalReviews = async (req, res) => {
-  try{ 
+  try {
     let cityId = parseInt(req.params.city_id)
-  console.log(cityId)
-  const review = await City.findAll({ where: { cityId: cityId } })
-  res.send(review)
-} catch (error) {
-  throw error
+    const review = await City.findAll({ where: { cityId: cityId } })
+    res.send(review)
+  } catch (error) {
+    throw error
+  }
 }
 
 const addHospital = async (req, res) => {
