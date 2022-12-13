@@ -3,7 +3,7 @@ import { GetHospitals } from '../services/HospitalServices'
 import { useParams } from 'react-router-dom'
 import Hospital from '../src/components/Hospital'
 
-const CityHospitals = () => {
+const HospitalPage = () => {
   let { id } = useParams()
   const [hospitals, setHospitals] = useState([])
 

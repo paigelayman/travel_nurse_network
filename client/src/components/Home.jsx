@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import {useParams,useNavigate } from 'react-router-dom'
 
 
 
 const Home = () => {
+const navigate = useNavigate()
 const [cities, showCities] = useState([])
 
+// const handleChange = (event) => {
+//   setFormState({ ...formState, [event.target.id]: event.target.value })
+// }
 
 useEffect(() => {  
   const apiCall = async () => {
@@ -16,16 +20,19 @@ useEffect(() => {
     }
     apiCall()
   }, [])
-  
+
+  const getHospitals = (id) => {
+    navigate(`hospitals/${id}`)
+  }
 
 return (
   <div className="Home">
     <h1>Travel Nurse Network</h1>
     <h2>start your adventure today</h2>      
     {cities ? cities.map((city) => (
-      <div className='cities'>
+      <div className='cities' key={city._id}>
         <h4>{city.name}, {city.state}</h4>
-        <button value={city.id}onClick={f}>Facilities</button>
+        <button value={city.id} onClick={()=>{getHospitals(city._id)}}>Facilities</button>
         <button>Experiences</button>
       </div>
     )): ''}  
