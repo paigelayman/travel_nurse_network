@@ -20,6 +20,7 @@ const getHospitals = async (req, res) => {
 
 const getHospitalReviews = async (req, res) => {
   let cityId = parseInt(req.params.city_id)
+  console.log(cityId)
   const review = await City.findAll({ where: { cityId: cityId } })
   res.send(review)
 }
