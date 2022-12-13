@@ -24,6 +24,8 @@ const Hospital = () => {
   }, [])  
   
   
+
+  
 return (
   <div className="hospitals">
   {hospitals ? hospitals.map((hospital) => (
