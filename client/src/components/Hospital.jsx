@@ -4,11 +4,11 @@ import axios from 'axios'
 import {Link} from 'react-router-dom' 
 
 
-const Hospital = () => {
+const Hospital = ({cities}) => {
   const [hospitals, showHospitals] = useState([])
   useEffect(() => {
     const apiCall = async () => {
-    let response = await axios.get(`http://localhost:3001/api/hospitals`)
+    let response = await axios.get(`http://localhost:3001/api/hospitals/${cities.id}`)
     showHospitals(response.data)
     }
     apiCall()
@@ -17,7 +17,7 @@ const Hospital = () => {
   const [reviews, showReviews] = useState([])
   useEffect(() => {
     const apiCall = async () => {
-    let response = await axios.get(`http://localhost:3001/api/reviews`)
+    let response = await axios.get(`http://localhost:3001/api/reviews/${hospitals.id}`)
     showReviews(response.data)
     }
     apiCall()

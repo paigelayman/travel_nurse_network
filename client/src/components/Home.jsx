@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 
 
 
@@ -25,7 +25,7 @@ return (
     {cities ? cities.map((city) => (
       <div className='cities'>
         <h4>{city.name}, {city.state}</h4>
-        <button>Facilities</button>
+        <button value={city.id}onClick={f}>Facilities</button>
         <button>Experiences</button>
       </div>
     )): ''}  
