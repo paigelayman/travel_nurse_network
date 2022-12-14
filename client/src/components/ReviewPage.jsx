@@ -6,18 +6,19 @@ import { useParams, Link } from 'react-router-dom'
 const HospitalPage = () => {
   let { id } = useParams()
   const [reviews, setReviews] = useState([])
+  console.log(reviews)
 
-  useEffect(() => {
-    const handleReviews = async () => {
-      const data = await GetReviews(`${id}`)
-      setReviews(data)
-    }
+useEffect(() => {
+  const handleReviews = async () => {
+  const data = await GetReviews(`${id}`)
+    setReviews(data)
+  }
     handleReviews()
-  }, [])
+}, [])
 
 
   return (
-    <div className="hospitals">
+    <div className="reviews">
       {reviews ? reviews.map((review) => (
       <div className="reviews" key={review._id}>
       <h3>Review by: {review.name}</h3>
