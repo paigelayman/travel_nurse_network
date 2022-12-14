@@ -10,6 +10,12 @@ module.exports = {
   },
   production: {
     database: 'travel_rn_production',
-    dialect: 'postgres'
+    dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false,
+        require: true
+      }
+    }
   }
 }
