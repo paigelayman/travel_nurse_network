@@ -20,13 +20,27 @@ const getOneReview = async (req, res) => {
 
 const addReview = async (req, res) => {
   try {
-    const reviewInfo = req.body
-    let review = await Review.create(reviewInfo)
+    let hospitalId = parseInt(req.params.hospital_id)
+    let reviewContent = {
+      hospitalId,
+      ...req.body
+    }
+    let review = await Review.create(reviewContent)
     res.send(review)
   } catch (error) {
     throw error
   }
 }
+
+// const addReview = async (req, res) => {
+//   try {
+//     const reviewInfo = req.body
+//     let review = await Review.create(reviewInfo)
+//     res.send(review)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 const updateReview = async (req, res) => {
   try {

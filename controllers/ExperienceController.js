@@ -30,16 +30,6 @@ const getCityExperiences = async (req, res) => {
   }
 }
 
-// const addExperience = async (req, res) => {
-//   try {
-//     const experienceInfo = req.body
-//     let experience = await Experience.create(experienceInfo)
-//     res.send(experience)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
 const addExperience = async (req, res) => {
   try {
     let cityId = parseInt(req.params.city_id)
