@@ -2,7 +2,6 @@ const Router = require('express').Router()
 const controller = require('../controllers/HospitalController')
 
 Router.get('/', controller.getHospitals)
-// Router.get('/:hospital_id', controller.getOneHospital)
 Router.get('/:city_id', controller.getCityHospitals)
 Router.post('/', controller.addHospital)
 
