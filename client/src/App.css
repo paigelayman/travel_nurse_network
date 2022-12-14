@@ -58,3 +58,14 @@ body {
 .motto {
   font-style: italic
 }
+
+form { 
+padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 5em;
+  margin: 2em auto;
+  border-radius: 0.5em
+}

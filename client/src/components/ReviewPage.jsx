@@ -59,21 +59,6 @@ const ReviewPage = () => {
         <h4>Comments: {review.review}</h4>
         <h4>Typical Patient Load: {review.patientLoad}</h4>
         <h4>Overall Rating:{review.rating}/5</h4>
-        <button onClick={handleDelete}>Delete Review</button>
-      <form onSubmit={handleUpdate}>
-      <h3>Update Review: </h3>
-      <label htmlFor="author">Your Name: </label>
-      <input id="author" value={formState.name} onChange={handleChange} />
-      <label htmlFor="unit">Unit:</label>
-      <input id="unit" value={formState.description} onChange={handleChange} />
-      <label htmlFor="patientLoad">Patient Load: </label>
-      <input id="patientLoad" value={formState.name} onChange={handleChange} />
-      <label htmlFor="review">Review:</label>
-      <input id="review" value={formState.description} onChange={handleChange} />
-      <label htmlFor="rating">Rating (out of 5): </label>
-      <input id="rating" value={formState.name} onChange={handleChange} />
-      <button className='submit' type="submit">Update</button>
-      </form>
     </div>
     )): "" }
       <div>
@@ -91,6 +76,20 @@ const ReviewPage = () => {
       <input id="rating" value={formState.name} onChange={handleChange} />
       <button className='submit' type="submit">Submit</button>
     </form>
+      <form onSubmit={handleUpdate}>
+      <h3>Update Review: </h3>
+      <label htmlFor="author">Your Name: </label>
+      <input id="author" value={formState.name} onChange={handleChange} />
+      <label htmlFor="unit">Unit:</label>
+      <input id="unit" value={formState.description} onChange={handleChange} />
+      <label htmlFor="patientLoad">Patient Load: </label>
+      <input id="patientLoad" value={formState.name} onChange={handleChange} />
+      <label htmlFor="review">Review:</label>
+      <input id="review" value={formState.description} onChange={handleChange} />
+      <label htmlFor="rating">Rating (out of 5): </label>
+      <input id="rating" value={formState.name} onChange={handleChange} />
+      <button className='submit' type="submit">Update</button>
+      </form>
     </div>
     <button><Link className='link' to='/'>Back to Home</Link></button>
     </div>
