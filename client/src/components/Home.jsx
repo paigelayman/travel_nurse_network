@@ -34,7 +34,7 @@ return (
         <h4>{city.name}, {city.state}</h4>
         {/* <button value={city.id} onClick={()=>{getHospitals(city.id)}}>Facilities</button> */}
         <button><Link to={`hospitals/${city.id}`}>Facilities</Link></button>
-        <button>Experiences</button>
+        <button><Link to={`experiences/${city.id}`}>Things To Do</Link></button>
       </div>
     )): ''}  
   </div>

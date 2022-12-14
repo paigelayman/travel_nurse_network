@@ -18,6 +18,18 @@ const getOneExperience = async (req, res) => {
   }
 }
 
+const getCityExperiences = async (req, res) => {
+  try {
+    let cityId = parseInt(req.params.city_id)
+    const experience = await Experience.findAll({
+      where: { cityId: cityId }
+    })
+    res.send(experience)
+  } catch (error) {
+    throw error
+  }
+}
+
 const addExperience = async (req, res) => {
   try {
     const experienceInfo = req.body
@@ -56,5 +68,6 @@ module.exports = {
   getOneExperience,
   addExperience,
   updateExperience,
-  deleteExperience
+  deleteExperience,
+  getCityExperiences
 }
