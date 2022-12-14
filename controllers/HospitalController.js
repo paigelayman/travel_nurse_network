@@ -24,13 +24,28 @@ const getCityHospitals = async (req, res) => {
 
 const addHospital = async (req, res) => {
   try {
-    const hospitalInfo = req.body
-    let hospital = await Hospital.create(hospitalInfo)
+    let cityId = parseInt(req.params.city_id)
+    let hospitalContent = {
+      cityId,
+      ...req.body
+    }
+    let hospital = await Hospital.create(hospitalContent)
     res.send(hospital)
   } catch (error) {
     throw error
   }
 }
+
+// const addHospital = async (req, res) => {
+//   try {
+//     const cityId = parseInt(req.params.city_id)
+//     const hospitalInfo = req.body
+//     let hospital = await Hospital.create(cityId, hospitalInfo)
+//     res.send(hospital)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 const updateHospital = async (req, res) => {
   try {

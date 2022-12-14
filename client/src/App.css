@@ -49,3 +49,8 @@ body {
 .submit {
   color: black
 }
+
+.photoLink {
+  width: 150px;
+  height: 100px
+}

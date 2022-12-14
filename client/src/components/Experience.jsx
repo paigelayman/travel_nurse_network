@@ -18,7 +18,7 @@ const Experience = () => {
     setExperiences(data)
   }
     handleExperiences()
-  }, [])
+  }, [experiences.data])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -31,7 +31,7 @@ const Experience = () => {
         return error
       })
     setExperiences([...experiences, addedExperience.data])
-    setFormState({ name: '', image: ''})
+    setFormState({ comment: '', photoLink: '', price: ''})
     }
   
 return (
@@ -48,7 +48,7 @@ return (
 
 
   <form onSubmit={handleSubmit}>
-    <h3>Add Country: </h3>
+    <h3>Add Experience: </h3>
     <label htmlFor="photoLink">Link Photo Here: </label>
     <input id="photoLink" value={formState.photoLink} onChange={handleChange} />
     <label htmlFor="comment">Comment: </label>
