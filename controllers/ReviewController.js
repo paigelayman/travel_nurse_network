@@ -41,6 +41,16 @@ const updateReview = async (req, res) => {
   }
 }
 
+const getHospitalReviews = async (req, res) => {
+  try {
+    let hospitalId = parseInt(req.params.hospital_id)
+    const review = await Review.findAll({ where: { hospitalId: hospitalId } })
+    res.send(review)
+  } catch (error) {
+    throw error
+  }
+}
+
 const deleteReview = async (req, res) => {
   try {
     let reviewId = parseInt(req.params.review_id)
@@ -56,5 +66,6 @@ module.exports = {
   getOneReview,
   addReview,
   updateReview,
-  deleteReview
+  deleteReview,
+  getHospitalReviews
 }

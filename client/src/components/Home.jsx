@@ -21,9 +21,9 @@ useEffect(() => {
     apiCall()
   }, [])
 
-  const getHospitals = (id) => {
-    navigate(`hospitals/${id}`)
-  }
+  // const getHospitals = (id) => {
+  //   navigate(`hospitals/${id}`)
+  // }
 
 return (
   <div className="Home">
