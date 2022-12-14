@@ -21,7 +21,7 @@ useEffect(() => {
 return (
   <div className="Home">
     <h1>Travel Nurse Network</h1>
-    <h2>start your adventure today</h2>      
+    <h3 className='tagline'>start your adventure today by browsing cities below</h3>      
     {cities ? cities.map((city) => (
       <div className='cities' key={city.id}>
         <h4>{city.name}, {city.state}</h4>

@@ -10,15 +10,6 @@ const getHospitals = async (req, res) => {
   }
 }
 
-// const getOneHospital = async (req, res) => {
-//   try {
-//     const hospital = await Hospital.findByPk(req.params.hospital_id)
-//     res.send(hospital)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
 const getCityHospitals = async (req, res) => {
   try {
     let cityId = parseInt(req.params.city_id)
@@ -32,16 +23,6 @@ const getCityHospitals = async (req, res) => {
   }
 }
 
-// const getHospitalReviews = async (req, res) => {
-//   try {
-//     let cityId = parseInt(req.params.city_id)
-//     const review = await City.findAll({ where: { cityId: cityId } })
-//     res.send(review)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
 const addHospital = async (req, res) => {
   try {
     const hospitalInfo = req.body
@@ -52,10 +33,22 @@ const addHospital = async (req, res) => {
   }
 }
 
+const updateHospital = async (req, res) => {
+  try {
+    const hospitalId = parseInt(req.params.hospital_id)
+    let updatedHospital = await Hospital.update(req.body, {
+      where: { id: hospitalId },
+      returning: true
+    })
+    res.send(updatedHospital)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getHospitals,
-  // getOneHospital,
   addHospital,
-  // getHospitalReviews,
-  getCityHospitals
+  getCityHospitals,
+  updateHospital
 }

@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Eater&family=Inspiration&family=Mansalva&family=Rajdhani:wght@500&display=swap');
+
 .App {
-  text-align: center
+  text-align: center,
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
+}
+
+.tagline {
+  font-style: italic;
+}
+
+button {
+  background-color: rgb(74, 132, 182);
+  border: 2px solid white;
+  border-radius: 0.5em;
+  color: aliceblue;
+  padding: 0.5em;
+  margin-top: 8px;
+}
+
+button:hover{
+  background-color: white;
+  color: aliceblue;
+  cursor: pointer
+}
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+  background-size: cover;
+}
+
+.Home, .HospitalPage, .ReviewPage {
+  background-color: aliceblue;
+  margin-top: 15rem;
+  opacity: 75%;
 }

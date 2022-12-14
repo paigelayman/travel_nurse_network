@@ -18,7 +18,7 @@ useEffect(() => {
 
 
   return (
-    <div className="reviews">
+    <div className="ReviewPage">
       {reviews ? reviews.map((review) => (
       <div className="reviews" key={review._id}>
       <h3>Review by: {review.name}</h3>

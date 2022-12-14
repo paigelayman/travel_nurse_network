@@ -1,21 +1,38 @@
 import { useState, useEffect } from 'react'
 import {Link, useParams} from 'react-router-dom' 
 import { GetExperiences } from '../services/ExperienceServices'
-
+import axios from 'axios'
 
 const Experience = () => {
   let { id } = useParams()
   const [experiences, setExperiences] = useState([])
+  const [formState, setFormState] = useState({photoLink: "", comment: "", price: ""})
 
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })  
+  }
 
-
-useEffect(() => {
+  useEffect(() => {
   const handleExperiences = async () => {
   const data = await GetExperiences(`${id}`)
     setExperiences(data)
   }
     handleExperiences()
-}, [])
+  }, [])
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    let addedExperience = await axios
+      .post(`http://localhost:3001/experiences/${id}`, formState)
+      .then((response) => {
+        return response
+      })
+      .catch((error) => {
+        return error
+      })
+    setExperiences([...experiences, addedExperience.data])
+    setFormState({ name: '', image: ''})
+    }
   
 return (
   <div>
@@ -28,6 +45,18 @@ return (
     </div>
   )): "" }
   <button className='link-button'><Link className='link' to='/'>Back to Home</Link></button>
+
+  
+  <form onSubmit={handleSubmit}>
+    <h3>Add Country: </h3>
+    <label htmlFor="photoLink">Link Photo Here: </label>
+    <input id="photoLink" value={formState.photoLink} onChange={handleChange} />
+    <label htmlFor="comment">Comment: </label>
+    <input id="comment" value={formState.comment} onChange={handleChange} />
+    <label htmlFor="price">Price: </label>
+    <input id="price" value={formState.price} onChange={handleChange} />
+    <button className='submit' type="submit">Submit</button>
+  </form>
   </div>
 )
 }
