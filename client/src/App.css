@@ -33,7 +33,7 @@ body {
   background-size: cover;
 }
 
-.Home, .HospitalPage, .ReviewPage {
+.Home, .HospitalPage, .ReviewPage, .ExperiencePage {
   background-color: aliceblue;
   margin-top: 15rem;
   opacity: 75%;

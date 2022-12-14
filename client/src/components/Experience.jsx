@@ -35,7 +35,7 @@ const Experience = () => {
     }
   
 return (
-  <div>
+  <div className='ExperiencePage'>
   <h1>Things To Do</h1>
     {experiences ? experiences.map((experience) => (
     <div className="experiences" key={experience._id}>
@@ -46,7 +46,7 @@ return (
   )): "" }
   <button className='link-button'><Link className='link' to='/'>Back to Home</Link></button>
 
-  
+
   <form onSubmit={handleSubmit}>
     <h3>Add Country: </h3>
     <label htmlFor="photoLink">Link Photo Here: </label>

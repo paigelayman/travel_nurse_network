@@ -35,3 +35,5 @@ This app is intended to be a place where travel nurses can share their experienc
 ---
 
 ### Credits
+
+https://fonts.google.com/specimen/Rajdhani
