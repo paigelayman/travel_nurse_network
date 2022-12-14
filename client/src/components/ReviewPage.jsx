@@ -58,10 +58,9 @@ const ReviewPage = () => {
       {reviews ? reviews.map((review) => (
       <div className="reviews" key={review.id}>
       <h3>Review by: {review.author}</h3>
-        <h4>Review ID: {review.id}</h4>
         <h4>Unit: {review.unit}</h4>
-        <h4>Comments: {review.review}</h4>
         <h4>Typical Patient Load: {review.patientLoad}</h4>
+        <h4>Comments: {review.review}</h4>
         <h4>Overall Rating:{review.rating}/5</h4>
       <form>
         <button onClick={handleClick}>Update or Delete Review</button>
@@ -74,7 +73,7 @@ const ReviewPage = () => {
           <input id="unit" value={formState.description} onChange={handleChange} />
           <label htmlFor="patientLoad">Patient Load: </label>
           <input id="patientLoad" value={formState.name} onChange={handleChange} />
-          <label htmlFor="review">Review:</label>
+          <label htmlFor="review">Comments:</label>
           <input id="review" value={formState.description} onChange={handleChange} />
           <label htmlFor="rating">Rating (out of 5): </label>
           <input id="rating" value={formState.name} onChange={handleChange} />
