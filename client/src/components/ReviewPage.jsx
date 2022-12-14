@@ -21,7 +21,7 @@ useEffect(() => {
     <div className="ReviewPage">
       {reviews ? reviews.map((review) => (
       <div className="reviews" key={review._id}>
-      <h3>Review by: {review.name}</h3>
+      <h3>Review by: {review.author}</h3>
         <h3>Unit: {review.unit}</h3>
         <h3>Comments: {review.review}</h3>
         <h3>Typical Patient Load: {review.patientLoad}</h3>
