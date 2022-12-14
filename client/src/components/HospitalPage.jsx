@@ -10,18 +10,24 @@ const HospitalPage = () => {
   useEffect(() => {
     const handleHospitals = async () => {
       const data = await GetHospitals(`${id}`)
-      setHospitals(data.data)
+      setHospitals(data)
     }
     handleHospitals()
   }, [])
 
   return (
-    <div className="hospitals">
+    <div>
+      
       {hospitals?.map((hospital) => (
-        <Hospital name={hospital.name} />
+      <div className="hospitals">
+        {/* <HospitalPage name={hospital.name} /> */}
+        <h2>{hospital.name}</h2>
+        </div>
       ))}
+    
     </div>
   )
 }
 
 export default HospitalPage
+

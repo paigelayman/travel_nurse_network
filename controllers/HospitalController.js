@@ -22,7 +22,10 @@ const getHospitals = async (req, res) => {
 const getCityHospitals = async (req, res) => {
   try {
     let cityId = parseInt(req.params.city_id)
-    const hospital = await Hospital.findAll({ where: { cityId: cityId } })
+    const hospital = await Hospital.findAll({
+      where: { cityId: cityId }
+    })
+    console.log(cityId)
     res.send(hospital)
   } catch (error) {
     throw error
