@@ -25,7 +25,7 @@ const HospitalPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let addedHospital = await axios
-      .post(`http://localhost:3001/hospitals/${id}`, formState)
+      .post(`http://localhost:3001/api/hospitals/${id}`, formState)
       .then((response) => {
         console.log(response)
         return response
