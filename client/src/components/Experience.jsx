@@ -18,7 +18,7 @@ const Experience = () => {
     setExperiences(data)
   }
     handleExperiences()
-  }, [experiences.data])
+  }, [])
 
   const handleSubmit = async (event) => {
     event.preventDefault()

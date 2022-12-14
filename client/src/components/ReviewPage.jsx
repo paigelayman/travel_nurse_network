@@ -6,15 +6,34 @@ import { useParams, Link } from 'react-router-dom'
 const HospitalPage = () => {
   let { id } = useParams()
   const [reviews, setReviews] = useState([])
+  const [formState, setFormState] = useState({ author: '', unit: '', patientLoad: '', review: '', rating: ''})
 
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })
+  }
 
-useEffect(() => {
+  useEffect(() => {
   const handleReviews = async () => {
   const data = await GetReviews(`${id}`)
     setReviews(data)
   }
     handleReviews()
-}, [])
+  }, [])
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    let addedReview = await axios
+      .post(`http://localhost:3001/api/reviews/${id}`, formState)
+      .then((response) => {
+        console.log(response)
+        return response
+      })
+      .catch((error) => {
+        return error
+      })
+    setHospitals([...reviews, addedReview.data])
+    setFormState({ author: '', unit: '', patientLoad: '', review: '', rating: ''})
+    }
 
 
   return (

@@ -30,10 +30,24 @@ const getCityExperiences = async (req, res) => {
   }
 }
 
+// const addExperience = async (req, res) => {
+//   try {
+//     const experienceInfo = req.body
+//     let experience = await Experience.create(experienceInfo)
+//     res.send(experience)
+//   } catch (error) {
+//     throw error
+//   }
+// }
+
 const addExperience = async (req, res) => {
   try {
-    const experienceInfo = req.body
-    let experience = await Experience.create(experienceInfo)
+    let cityId = parseInt(req.params.city_id)
+    let experienceContent = {
+      cityId,
+      ...req.body
+    }
+    let experience = await Experience.create(experienceContent)
     res.send(experience)
   } catch (error) {
     throw error
