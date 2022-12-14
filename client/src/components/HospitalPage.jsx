@@ -27,6 +27,7 @@ const HospitalPage = () => {
     let addedHospital = await axios
       .post(`http://localhost:3001/hospitals/${id}`, formState)
       .then((response) => {
+        console.log(response)
         return response
       })
       .catch((error) => {

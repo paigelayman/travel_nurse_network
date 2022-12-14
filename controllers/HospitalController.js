@@ -16,7 +16,6 @@ const getCityHospitals = async (req, res) => {
     const hospital = await Hospital.findAll({
       where: { cityId: cityId }
     })
-    console.log(cityId)
     res.send(hospital)
   } catch (error) {
     throw error

@@ -24,7 +24,7 @@ button {
 
 button:hover{
   background-color: white;
-  color: aliceblue;
+  border: 2px solid black;
   cursor: pointer
 }
 
@@ -43,4 +43,5 @@ body {
 .link {
   text-decoration: none;
   font-family: 'Rajdhani', sans-serif;
+  color: black
 }
