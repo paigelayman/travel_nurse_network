@@ -11,8 +11,7 @@
     "pg": "^8.8.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.5",
-    "sequelize": "^6.26.0",
-    "node": "v18.11.0"
+    "sequelize": "^6.26.0"
   },
   "scripts": {
     "start": "node server.js",
@@ -23,6 +22,10 @@
   "description": "### By Paige Layman",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": "v18.11.0",
+    "npm": "8.19.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paigelayman/travel_nurse_network.git"
