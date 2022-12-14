@@ -36,5 +36,5 @@ This app is intended to be a place where travel nurses can share their experienc
 
 ### Credits
 
-[BobbyHadz](https://bobbyhadz.com/blog/react-onclick-show-component)
-[Google Fonts](https://fonts.google.com/specimen/Rajdhani)
+- [BobbyHadz](https://bobbyhadz.com/blog/react-onclick-show-component)
+- [Google Fonts](https://fonts.google.com/specimen/Rajdhani)

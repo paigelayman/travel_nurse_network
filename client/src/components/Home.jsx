@@ -7,8 +7,11 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
 const [cities, showCities] = useState([])
-const [formState, setFormState] = useState({name: "", state: ""})
+// const [formState, setFormState] = useState({name: "", state: "", description: ""})
 
+// const handleChange = (event) => {
+//   setFormState({ ...formState, [event.target.id]: event.target.value })  
+// }
 
 useEffect(() => {  
   const apiCall = async () => {
@@ -18,6 +21,19 @@ useEffect(() => {
     apiCall()
   }, [])
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault()
+  //   let addedCity = await axios
+  //     .post(`http://localhost:3001/api/`, formState)
+  //     .then((response) => {
+  //       return response
+  //     })
+  //     .catch((error) => {
+  //       return error
+  //     })
+  //   showCities([...cities, addedCity.data])
+  //   setFormState({name: "", state: "", description: ""})
+  //   }
 return (
   <div className="Home">
     <h1>Travel Nurse Network</h1>
@@ -30,6 +46,16 @@ return (
         <button><Link className="link" to={`experiences/${city.id}`}>Things To Do</Link></button>
       </div>
     )): ''}  
+  {/* <form onSubmit={handleSubmit}>
+      <h3>Add a City: </h3>
+      <label htmlFor="name">City: </label>
+      <input id="name" value={formState.name} onChange={handleChange} />
+      <label htmlFor="state">State: </label>
+      <input id="state" value={formState.state} onChange={handleChange} />
+      <label htmlFor="description">City Motto: </label>
+      <input id="description" value={formState.price} onChange={handleChange} />
+      <button className='submit' type="submit">Submit</button>
+  </form> */}
   </div>
   )
 }
