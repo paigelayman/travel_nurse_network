@@ -32,16 +32,6 @@ const addReview = async (req, res) => {
   }
 }
 
-// const addReview = async (req, res) => {
-//   try {
-//     const reviewInfo = req.body
-//     let review = await Review.create(reviewInfo)
-//     res.send(review)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
 const updateReview = async (req, res) => {
   try {
     const reviewId = parseInt(req.params.review_id)

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { GetReviews } from '../services/ReviewServices'
 import { useParams, Link } from 'react-router-dom'
+import axios from 'axios' 
 
-
-const HospitalPage = () => {
+const ReviewPage = () => {
   let { id } = useParams()
   const [reviews, setReviews] = useState([])
   const [formState, setFormState] = useState({ author: '', unit: '', patientLoad: '', review: '', rating: ''})
@@ -31,9 +31,11 @@ const HospitalPage = () => {
       .catch((error) => {
         return error
       })
-    setHospitals([...reviews, addedReview.data])
+    setReviews([...reviews, addedReview.data])
     setFormState({ author: '', unit: '', patientLoad: '', review: '', rating: ''})
     }
+
+    // const handleUpdate 
 
 
   return (
@@ -47,9 +49,25 @@ const HospitalPage = () => {
         <h3>Overall Rating:{review.rating}/5</h3>
     </div>
     )): "" }
+      <div>
+    <form onSubmit={handleSubmit}>
+      <h3>Add Review: </h3>
+      <label htmlFor="author">Your Name: </label>
+      <input id="author" value={formState.name} onChange={handleChange} />
+      <label htmlFor="unit">Unit:</label>
+      <input id="unit" value={formState.description} onChange={handleChange} />
+      <label htmlFor="patientLoad">Patient Load: </label>
+      <input id="patientLoad" value={formState.name} onChange={handleChange} />
+      <label htmlFor="review">Review:</label>
+      <input id="review" value={formState.description} onChange={handleChange} />
+      <label htmlFor="rating">Rating (out of 5): </label>
+      <input id="rating" value={formState.name} onChange={handleChange} />
+      <button className='submit' type="submit">Submit</button>
+    </form>
+    </div>
     <button><Link className='link' to='/'>Back to Home</Link></button>
     </div>
     )
 }
-export default HospitalPage
+export default ReviewPage
 
