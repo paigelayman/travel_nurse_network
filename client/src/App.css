@@ -36,5 +36,11 @@ body {
 .Home, .HospitalPage, .ReviewPage, .ExperiencePage {
   background-color: aliceblue;
   margin-top: 15rem;
+  margin-bottom: 15rem;
   opacity: 75%;
+}
+
+.link {
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
 }

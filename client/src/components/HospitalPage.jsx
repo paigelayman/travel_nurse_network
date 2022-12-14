@@ -42,7 +42,7 @@ const HospitalPage = () => {
     <div className="hospitals" key={hospital._id}>
       <h2>Facility Name: {hospital.name}</h2>
       <h3>{hospital.description}</h3>
-    <button><Link to={`/reviews/${hospital.id}`}>See Reviews</Link></button>
+    <button><Link className="link" to={`/reviews/${hospital.id}`}>See Reviews</Link></button>
     </div>
     )): "" }
     <div>
@@ -56,7 +56,7 @@ const HospitalPage = () => {
     </form>
     </div>
 
-    <button className='link-button'><Link className='link' to='/'>Back to Home</Link></button>
+    <button><Link className='link' to='/'>Back to Home</Link></button>
     </div>
     )
 }

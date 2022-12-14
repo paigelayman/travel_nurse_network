@@ -28,7 +28,7 @@ useEffect(() => {
         <h3>Overall Rating:{review.rating}/5</h3>
     </div>
     )): "" }
-    <button className='link-button'><Link className='link' to='/'>Back to Home</Link></button>
+    <button><Link className='link' to='/'>Back to Home</Link></button>
     </div>
     )
 }
