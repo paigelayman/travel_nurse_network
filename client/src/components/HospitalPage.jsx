@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { GetHospitals } from '../services/HospitalServices'
-import { GetReviews } from '../services/ReviewServices'
+// import { GetReviews } from '../services/ReviewServices'
 import { useParams, Link } from 'react-router-dom'
 
 
 const HospitalPage = () => {
   let { id } = useParams()
   const [hospitals, setHospitals] = useState([])
-  const [reviews, setReviews] = useState([])
+  // const [reviews, setReviews] = useState([])
 
   useEffect(() => {
     const handleHospitals = async () => {
@@ -17,13 +17,13 @@ const HospitalPage = () => {
     handleHospitals()
   }, [])
 
-  useEffect(() => {
-    const handleReviews = async () => {
-      const data = await GetReviews(`${id}`)
-      setReviews(data)
-    }
-    handleReviews()
-  }, [])
+  // useEffect(() => {
+  //   const handleReviews = async () => {
+  //     const data = await GetReviews(`${id}`)
+  //     setReviews(data)
+  //   }
+  //   handleReviews()
+  // }, [])
 
 
   return (
@@ -31,7 +31,7 @@ const HospitalPage = () => {
     {hospitals ? hospitals.map((hospital) => (
     <div className="hospitals" key={hospital._id}>
       <h2>Facility Name: {hospital.name}</h2>
-      {reviews ? reviews.map((review) => (
+      {/* {reviews ? reviews.map((review) => (
       <div className="reviews" key={review._id}>
       <h3>Review by: {review.name}</h3>
         <h3>Unit: {review.unit}</h3>
@@ -39,7 +39,8 @@ const HospitalPage = () => {
         <h3>Typical Patient Load: {review.patientLoad}</h3>
         <h3>Overall Rating:{review.rating}/5</h3>
     </div>
-    )): "" }
+    )): "" } */}
+    <button><Link to={`/reviews/${hospital.id}`}>See Reviews</Link></button>
     </div>
     )): "" }
     <button className='link-button'><Link className='link' to='/'>Back to Home</Link></button>
