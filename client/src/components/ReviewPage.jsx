@@ -65,8 +65,8 @@ const ReviewPage = () => {
         <label htmlFor="review">Review:</label>
         <input id="review" value={formState.description} onChange={handleChange} />
         <label htmlFor="rating">Rating (out of 5): </label>
-        {/* <input id="rating" value={formState.name} onChange={handleChange} />
-        <label htmlFor="id">ID: </label> */}
+        <input id="rating" value={formState.name} onChange={handleChange} />
+        {/* <label htmlFor="id">ID: </label>  */}
       {/* <input id="id" value={formState.id} onChange={handleChange} /> */}
         <button id={review.id} className='update' onClick={handleUpdate}>Update</button>
         <button className='delete' id={review.id} onClick={handleDelete}>Delete</button>
