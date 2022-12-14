@@ -32,36 +32,51 @@ const ReviewPage = () => {
         return error
       })
     setReviews([...reviews, addedReview.data])
-    setFormState({ author: '', unit: '', patientLoad: '', review: '', rating: ''})
+    setFormState({ author: '', unit: '', patientLoad: '', review: '', rating: '', id: ''})
     }
 
     const handleUpdate = async (event) => {
       event.preventDefault()
-      let fixedReview = await axios.put(`http://localhost:3001/api/reviews/${id}`, formState)
+      let fixedReview = await axios.put(`http://localhost:3001/api/reviews/${event.target.id}`, formState)
+      console.log(event)
       setReviews([reviews, fixedReview.data])
-      setFormState({ author: '', unit: '', patientLoad: '', review: '', rating: ''})
+      setFormState({ author: '', unit: '', patientLoad: '', review: '', rating: '', id: ''})
     }
 
     const handleDelete = async (event) => {
       event.preventDefault()
-      let deletedReview = await axios.delete(`http://localhost:3001/api/reviews/${id}`, formState)
+      let deletedReview = await axios.delete(`http://localhost:3001/api/reviews/${event.target.id}`, formState)
       setReviews([reviews, deletedReview.data])
-      setFormState({ author: '', unit: '', patientLoad: '', review: '', rating: ''})
     }
 
 
   return (
     <div className="ReviewPage">
       {reviews ? reviews.map((review) => (
-      <div className="reviews" key={review._id}>
+      <div className="reviews" key={review.id}>
       <h3>Review by: {review.author}</h3>
+        <h4>Review ID: {review.id}</h4>
         <h4>Unit: {review.unit}</h4>
         <h4>Comments: {review.review}</h4>
         <h4>Typical Patient Load: {review.patientLoad}</h4>
         <h4>Overall Rating:{review.rating}/5</h4>
+        <form>
+        <h3>Update Review: </h3>
+        <label htmlFor="author">Your Name: </label>
+        <input id="author" value={formState.name} onChange={handleChange} />
+        <label htmlFor="unit">Unit:</label>
+        <input id="unit" value={formState.description} onChange={handleChange} />
+        <label htmlFor="patientLoad">Patient Load: </label>
+        <input id="patientLoad" value={formState.name} onChange={handleChange} />
+        <label htmlFor="review">Review:</label>
+        <input id="review" value={formState.description} onChange={handleChange} />
+        <label htmlFor="rating">Rating (out of 5): </label>
+        <input id="rating" value={formState.name} onChange={handleChange} />
+        <button id={review.id} className='update' onClick={handleUpdate}>Update</button>
+      </form> 
+        <button id={review.id} onClick={handleDelete}>Delete Review</button>
     </div>
     )): "" }
-      <div>
     <form onSubmit={handleSubmit}>
       <h3>Add Your Own Review: </h3>
       <label htmlFor="author">Your Name: </label>
@@ -74,23 +89,10 @@ const ReviewPage = () => {
       <input id="review" value={formState.description} onChange={handleChange} />
       <label htmlFor="rating">Rating (out of 5): </label>
       <input id="rating" value={formState.name} onChange={handleChange} />
+      <label htmlFor="id">ID (Update Only): </label>
+      <input id="id" value={formState.id} onChange={handleChange} />
       <button className='submit' type="submit">Submit</button>
     </form>
-      <form onSubmit={handleUpdate}>
-      <h3>Update Review: </h3>
-      <label htmlFor="author">Your Name: </label>
-      <input id="author" value={formState.name} onChange={handleChange} />
-      <label htmlFor="unit">Unit:</label>
-      <input id="unit" value={formState.description} onChange={handleChange} />
-      <label htmlFor="patientLoad">Patient Load: </label>
-      <input id="patientLoad" value={formState.name} onChange={handleChange} />
-      <label htmlFor="review">Review:</label>
-      <input id="review" value={formState.description} onChange={handleChange} />
-      <label htmlFor="rating">Rating (out of 5): </label>
-      <input id="rating" value={formState.name} onChange={handleChange} />
-      <button className='submit' type="submit">Update</button>
-      </form>
-    </div>
     <button><Link className='link' to='/'>Back to Home</Link></button>
     </div>
     )
