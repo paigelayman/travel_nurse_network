@@ -6,7 +6,7 @@ import { useParams, Link } from 'react-router-dom'
 const HospitalPage = () => {
   let { id } = useParams()
   const [reviews, setReviews] = useState([])
-  console.log(reviews)
+
 
 useEffect(() => {
   const handleReviews = async () => {

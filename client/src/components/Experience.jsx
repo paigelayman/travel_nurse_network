@@ -6,7 +6,7 @@ import { GetExperiences } from '../services/ExperienceServices'
 const Experience = () => {
   let { id } = useParams()
   const [experiences, setExperiences] = useState([])
-  console.log(experiences)
+
 
 
 useEffect(() => {
