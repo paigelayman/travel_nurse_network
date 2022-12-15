@@ -41,14 +41,14 @@ const ReviewPage = () => {
     }
 
     const handleUpdate = async (event) => {
-      let fixedReview = await axios.put(`http://localhost:3001/api/reviews/${event.target.id}`, formState)
+      let fixedReview = await axios.put(`https://travel-nurse-network.herokuapp.com/api/reviews/${event.target.id}`, formState)
       console.log(event)
       setReviews([reviews, fixedReview.data])
       setFormState({ author: '', unit: '', patientLoad: '', review: '', rating: ''})
     }
 
     const handleDelete = async (event) => {
-      let deletedReview = await axios.delete(`http://localhost:3001/api/reviews/${event.target.id}`, formState)
+      let deletedReview = await axios.delete(`https://travel-nurse-network.herokuapp.com/api/reviews/${event.target.id}`, formState)
       setReviews([reviews, deletedReview.data])
     }
 

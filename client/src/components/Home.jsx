@@ -15,7 +15,7 @@ const [cities, showCities] = useState([])
 
 useEffect(() => {  
   const apiCall = async () => {
-  let response = await axios.get('http://localhost:3001/api/cities')
+  let response = await axios.get('https://travel-nurse-network.herokuapp.com/api/cities')
     showCities(response.data)
     }
     apiCall()

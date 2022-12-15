@@ -23,7 +23,7 @@ const Experience = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let addedExperience = await axios
-      .post(`http://localhost:3001/api/experiences/${id}`, formState)
+      .post(`https://localhost:3000/api/experiences/${id}`, formState)
       .then((response) => {
         return response
       })
