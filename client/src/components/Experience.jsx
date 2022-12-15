@@ -23,7 +23,7 @@ const Experience = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let addedExperience = await axios
-      .post(`https://travel-nurse-network.herokuapp.com/api/experiences/${id}`, formState)
+      .post(`http://localhost:3001/api/experiences/${id}`, formState)
       .then((response) => {
         return response
       })
@@ -38,7 +38,7 @@ return (
   <div className='ExperiencePage'>
   <h1>Things To Do</h1>
     {experiences ? experiences.map((experience) => (
-    <div className="experiences" key={experience._id}>
+    <div className="experiences" key={experience.id}>
       <img src={experience.photoLink} id="experience-image" alt="experience" />
       <h3>Description: {experience.comment}</h3>
       <h3>Price: ${experience.price}</h3>  
