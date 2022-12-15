@@ -20,6 +20,10 @@ This app is a place where travel nurses can share their experiences and write re
 
 ---
 
+![Homepage](https://photos.google.com/search/_tra_/photo/AF1QipMs8GCR6fMAm8DO1GAGqhBN39cV8bHvw4MJY9hM)\
+
+![Reviews](https://photos.google.com/search/_tra_/photo/AF1QipNh9iQ7CDmt63kFdHc7_OXZUtCTWTtFMmNukw66)
+
 ### Technologies used
 
 - HTML
@@ -33,6 +37,8 @@ This app is a place where travel nurses can share their experiences and write re
 ---
 
 ### Getting Started
+
+- Follow links above to open in github or heroku
 
 ### Credits
 
