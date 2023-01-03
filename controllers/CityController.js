@@ -28,8 +28,19 @@ const addCity = async (req, res) => {
   }
 }
 
+const deleteCity = async (req, res) => {
+  try {
+    let cityId = parseInt(req.params.city_id)
+    await City.destroy({ where: { id: cityId } })
+    res.send(`The city with ID ${cityId} has been deleted.`)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getCities,
   getOneCity,
-  addCity
+  addCity,
+  deleteCity
 }
